@@ -1,0 +1,45 @@
+{
+  "$schema": "https://raw.githubusercontent.com/grafana/grafana/master/docs/sources/developers/plugins/plugin.schema.json",
+  "type": "panel",
+  "name": "LeNav Panel",
+  "id": "lework-lenav-panel",
+  "info": {
+    "description": "Site navigation",
+    "author": {
+      "name": "lework",
+      "url": "https://github.com/lework/grafana-lenav-panel"
+    },
+    "keywords": [
+      "nav site"
+    ],
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "links": [
+      {
+        "name": "Website",
+        "url": "https://github.com/lework/grafana-lenav-panel"
+      },
+      {
+        "name": "License",
+        "url": "https://github.com/lework/grafana-lenav-panel/blob/master/LICENSE"
+      }
+    ],
+    "screenshots": [
+      {
+        "name": "Showcase Dashboard",
+        "path": "img/lenav-screenshot-1.png"
+      },
+      {
+        "name": "Showcase Setting",
+        "path": "img/lenav-screenshot-2.png"
+      }
+    ],
+    "version": "%VERSION%",
+    "updated": "%TODAY%"
+  },
+  "dependencies": {
+    "grafanaDependency": ">=7.0.0"
+  }
+}

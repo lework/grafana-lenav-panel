@@ -1,0 +1,31 @@
+{
+  "name": "lework-grafana-lenav-panel",
+  "version": "1.0.0",
+  "description": "Site navigation",
+  "scripts": {
+    "build": "grafana-toolkit plugin:build",
+    "test": "grafana-toolkit plugin:test",
+    "dev": "grafana-toolkit plugin:dev",
+    "watch": "grafana-toolkit plugin:dev --watch",
+    "sign": "grafana-toolkit plugin:sign",
+    "start": "yarn watch"
+  },
+  "author": "lework",
+  "repository": "github:lework/grafana-lenav-panel",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/lework/grafana-lenav-panel/issues",
+    "email": "lework@yeah.net"
+  },
+  "devDependencies": {
+    "@grafana/data": "^8.2.0-beta.2",
+    "@grafana/schema": "^8.2.0-beta.2",
+    "@grafana/toolkit": "^8.2.0-beta.2",
+    "@grafana/ui": "^8.2.0-beta.2",
+    "@types/lodash": "^4.14.175",
+    "emotion": "10.0.27"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
