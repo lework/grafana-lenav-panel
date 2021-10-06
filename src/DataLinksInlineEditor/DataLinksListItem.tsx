@@ -1,10 +1,8 @@
 import React, { FC } from 'react';
 import { css, cx } from '@emotion/css';
 import { DataFrame, GrafanaTheme2 } from '@grafana/data';
-
 import { stylesFactory, useTheme2, IconButton, HorizontalGroup, VerticalGroup } from '@grafana/ui';
 import { DataLink } from './datalink';
-
 
 export interface DataLinksListItemProps {
   index: number;

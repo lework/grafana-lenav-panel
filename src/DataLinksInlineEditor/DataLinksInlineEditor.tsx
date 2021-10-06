@@ -1,13 +1,11 @@
-import { DataFrame, GrafanaTheme2, VariableSuggestion } from '@grafana/data';
 import React, { useState } from 'react';
 import { css } from '@emotion/css';
 import { cloneDeep } from 'lodash';
+import { stylesFactory, useTheme2, Button, Modal } from '@grafana/ui';
+import { DataFrame, GrafanaTheme2, VariableSuggestion } from '@grafana/data';
 import { DataLink } from './datalink';
 import { DataLinksListItem } from './DataLinksListItem';
 import { DataLinkEditorModalContent } from './DataLinkEditorModalContent';
-
-import { stylesFactory, useTheme2, Button, Modal } from '@grafana/ui';
-
 
 interface DataLinksInlineEditorProps {
   links?: DataLink[];
@@ -97,7 +95,7 @@ export const DataLinksInlineEditor: React.FC<DataLinksInlineEditorProps> = ({
         >
           <DataLinkEditorModalContent
             index={editIndex}
-            link={isNew ? { title: '', url: '', icon: '', color: '', group: ''} : linksSafe[editIndex]}
+            link={isNew ? { title: '', url: '', icon: '', color: '', group: '' } : linksSafe[editIndex]}
             data={data}
             onSave={onDataLinkChange}
             onCancel={onDataLinkCancel}

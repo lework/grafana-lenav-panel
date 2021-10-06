@@ -2,7 +2,6 @@ import React, { FC } from 'react';
 import { css, cx } from 'emotion';
 import { PanelProps, GrafanaTheme2 } from '@grafana/data';
 import { stylesFactory, useTheme2, styleMixins, Icon, HorizontalGroup, VerticalGroup } from '@grafana/ui';
-
 import { NavOptions, GroupDataProps, LinkProps } from 'types';
 
 const defaultLinks = [
@@ -19,7 +18,7 @@ const defaultLinks = [
 interface Props extends PanelProps<NavOptions> {}
 
 export const NavPanel: FC<Props> = ({ options, data, width, height }) => {
-  const styles = getStyles(options.navTheme);
+  const styles = GetStyles(options.navTheme)(useTheme2());
 
   let dataLinks: { [index: string]: any } = {};
   let userLinks = [];
@@ -39,7 +38,7 @@ export const NavPanel: FC<Props> = ({ options, data, width, height }) => {
   return (
     <div className={styles.container}>
       {Object.keys(dataLinks).map((key, index) => {
-        return <GroupDataLink name={key} data={dataLinks[key]} options={options} />;
+        return <GroupDataLink key={index} name={key} data={dataLinks[key]} options={options} />;
       })}
     </div>
   );
@@ -47,7 +46,7 @@ export const NavPanel: FC<Props> = ({ options, data, width, height }) => {
 
 export const Link: FC<LinkProps> = ({ title, url, target, color, options, icon }) => {
   const theme = useTheme2();
-  const styles = getStyles(options.navTheme);
+  const styles = GetStyles(options.navTheme)(theme);
 
   return (
     <a
@@ -71,18 +70,19 @@ export const Link: FC<LinkProps> = ({ title, url, target, color, options, icon }
 };
 
 export const GroupDataLink: FC<GroupDataProps> = ({ name, data, options }) => {
-  const styles = getStyles(options.navTheme);
+  const styles = GetStyles(options.navTheme)(useTheme2());
   return (
     <div className={styles.group}>
       <VerticalGroup spacing="xs">
         {options.showGroupName && <div className={styles.groupName}>[{name}]</div>}
         <HorizontalGroup align="flex-start" justify="flex-start" spacing="md" wrap>
-          {data.map((option) => {
+          {data.map((option, index) => {
             if (!option.url) {
               return;
             }
             return (
               <Link
+                key={index}
                 title={option.title}
                 icon={option.icon}
                 color={option.color}
@@ -124,7 +124,6 @@ const getDefaultStyles = stylesFactory((theme: GrafanaTheme2) => {
       color: orange;
     `,
     item: css`
-      width: 160px;
       margin-right: ${theme.spacing(3)};
       text-decoration: underline;
       overflow: hidden;
@@ -195,10 +194,10 @@ const getBoxStyles = stylesFactory((theme: GrafanaTheme2) => {
   };
 });
 
-function getStyles(theme: string) {
-  if (theme == 'box') {
-    return getBoxStyles(useTheme2());
+function GetStyles(theme: string) {
+  if (theme === 'box') {
+    return getBoxStyles;
   }
 
-  return getDefaultStyles(useTheme2());
+  return getDefaultStyles;
 }

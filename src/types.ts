@@ -12,7 +12,6 @@ export interface LinkProps {
   icon: IconName;
 }
 
-
 export interface NavOptions {
   showLinkIcon: boolean;
   showGroupName: boolean;
@@ -22,9 +21,8 @@ export interface NavOptions {
   navData: DataLink;
 }
 
-
 export interface GroupDataProps {
   name: string;
-  data: Array<DataLink>;
+  data: DataLink[];
   options: NavOptions;
 }

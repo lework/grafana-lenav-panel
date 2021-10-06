@@ -4,7 +4,6 @@ import { DataLinkEditor } from './DataLinkEditor';
 import { Button, Modal } from '@grafana/ui';
 import { DataLink } from './datalink';
 
-
 interface DataLinkEditorModalContentProps {
   link: DataLink;
   index: number;

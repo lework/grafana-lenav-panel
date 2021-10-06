@@ -1,10 +1,8 @@
 import React, { ChangeEvent } from 'react';
 import { VariableSuggestion, GrafanaTheme2 } from '@grafana/data';
 import { css } from '@emotion/css';
-
 import { DataLink } from './datalink';
-import { Switch, useStyles2,Field, Input, DataLinkInput, ColorPicker} from '@grafana/ui';
-
+import { Switch, useStyles2, Field, Input, DataLinkInput, ColorPicker } from '@grafana/ui';
 
 interface DataLinkEditorProps {
   index: number;
@@ -76,7 +74,6 @@ export const DataLinkEditor: React.FC<DataLinkEditorProps> = React.memo(
         {isLast && (
           <div className={styles.infoText}>
             With data links you can reference data variables like series name, labels and values. Type CMD+Space,
-            CTRL+Space, or $ to open variable suggestions.
           </div>
         )}
       </div>
