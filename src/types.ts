@@ -1,5 +1,3 @@
-
-
 import { IconName } from '@grafana/ui';
 import { DataLink } from './DataLinksInlineEditor/datalink';
 

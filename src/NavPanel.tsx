@@ -8,7 +8,12 @@ import { NavOptions, GroupDataProps, LinkProps } from 'types';
 const defaultLinks = [
   { group: 'default', title: '请配置一个链接', url: 'https://grafana.com/docs/grafana/latest', targetBlank: true },
   { group: 'author', title: 'author: lework', url: 'https://lework.github.io/', targetBlank: true },
-  { group: 'author', title: 'repo: grafana-lenav-panel', url: 'https://github.com/lework/grafana-lenav-panel', targetBlank: true },
+  {
+    group: 'author',
+    title: 'repo: grafana-lenav-panel',
+    url: 'https://github.com/lework/grafana-lenav-panel',
+    targetBlank: true,
+  },
 ];
 
 interface Props extends PanelProps<NavOptions> {}
@@ -16,12 +21,12 @@ interface Props extends PanelProps<NavOptions> {}
 export const NavPanel: FC<Props> = ({ options, data, width, height }) => {
   const styles = getStyles(options.navTheme);
 
-  let dataLinks: {[index: string]:any} = {}
+  let dataLinks: { [index: string]: any } = {};
   let userLinks = [];
 
-  userLinks = options['navData'] as any || defaultLinks;
+  userLinks = (options['navData'] as any) || defaultLinks;
 
-  userLinks.map((option: { group: string; }) => {
+  userLinks.map((option: { group: string }) => {
     let group = option.group || 'default';
 
     if (!dataLinks.hasOwnProperty(group)) {
@@ -39,7 +44,6 @@ export const NavPanel: FC<Props> = ({ options, data, width, height }) => {
     </div>
   );
 };
-
 
 export const Link: FC<LinkProps> = ({ title, url, target, color, options, icon }) => {
   const theme = useTheme2();
@@ -74,8 +78,8 @@ export const GroupDataLink: FC<GroupDataProps> = ({ name, data, options }) => {
         {options.showGroupName && <div className={styles.groupName}>[{name}]</div>}
         <HorizontalGroup align="flex-start" justify="flex-start" spacing="md" wrap>
           {data.map((option) => {
-            if (!option.url){
-              return
+            if (!option.url) {
+              return;
             }
             return (
               <Link
@@ -184,9 +188,9 @@ const getBoxStyles = stylesFactory((theme: GrafanaTheme2) => {
       }
     `,
     icon: css`
-    margin-right: ${theme.spacing(1)};
-    align-items: center;
-    justify-content: center;
+      margin-right: ${theme.spacing(1)};
+      align-items: center;
+      justify-content: center;
     `,
   };
 });
