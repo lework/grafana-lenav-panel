@@ -1,19 +1,35 @@
 # grafana-lenav-panel
 
-Site navigation
+站点导航
 
+# 使用
 
-# Grafana Panel Plugin Template
+## 安装
 
-[![Build](https://github.com/grafana/grafana-starter-panel/workflows/CI/badge.svg)](https://github.com/grafana/grafana-starter-panel/actions?query=workflow%3A%22CI%22)
+1. 下载插件包：https://github.com/lework/grafana-lenav-panel/releases/download/v1.0.0/grafana-lenav-panel-v1.0.0.zip
+2. 解压到 `data/plugins/` 目录下
+3. 重启 grafana 。
 
-This template is a starting point for building Grafana Panel Plugins in Grafana 7.0+
+在 **lcoalhost:3000** 域名下可以直接使用。
 
-## What is Grafana Panel Plugin?
+> 插件签名问题
 
-Panels are the building blocks of Grafana. They allow you to visualize data in different ways. While Grafana has several types of panels already built-in, you can also build your own panel, to add support for other visualizations.
+**其他域名**需要修改配置, 开启未签名插件。
 
-For more information about panels, refer to the documentation on [Panels](https://grafana.com/docs/grafana/latest/features/panels/panels/)
+```
+[plugins]
+enable_alpha = true
+allow_loading_unsigned_plugins = lework-lenav-panel,
+plugin_admin_enabled = true
+```
+
+## 配置
+
+![lenav-screenshot-1.png](./src/img/lenav-screenshot-1.png)
+
+![lenav-screenshot-2.png](./src/img/lenav-screenshot-2.png)
+
+# Plugin 开发
 
 ## Getting started
 
