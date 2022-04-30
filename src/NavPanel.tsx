@@ -9,13 +9,13 @@ const defaultLinks = [
     group: 'default',
     title: 'Grafana Dashboard',
     url: '/dashboards',
-    targetBlank: false
+    targetBlank: false,
   },
   {
     group: 'default',
     title: 'Grafana Docs',
     url: 'https://grafana.com/docs/grafana/latest',
-    targetBlank: true
+    targetBlank: true,
   },
   {
     group: 'default',

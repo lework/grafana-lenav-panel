@@ -33,9 +33,9 @@ export const DataLinksListItem: FC<DataLinksListItemProps> = ({ link, onEdit, on
               styles.title,
               !hasTitle && styles.notConfigured,
               hasColor &&
-              css`
-               color: ${color};
-               `
+                css`
+                  color: ${color};
+                `
             )}
           >
             {hasGroup && `[${group}] `} {hasTitle ? title : 'Data link title not provided'}

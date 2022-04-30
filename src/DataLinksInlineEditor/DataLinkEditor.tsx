@@ -64,7 +64,8 @@ export const DataLinkEditor: React.FC<DataLinkEditorProps> = React.memo(
             value={value.url}
             onChange={onUrlChange}
             suggestions={suggestions}
-            placeholder="https://www.baidu.com" />
+            placeholder="https://www.baidu.com"
+          />
         </Field>
 
         <Field label="Group">
