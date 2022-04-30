@@ -49,8 +49,8 @@ export const DataLinkEditor: React.FC<DataLinkEditorProps> = React.memo(
       onChange(index, { ...value, targetBlank: !value.targetBlank });
     };
 
-    if (value.color == '') {
-      value.color = defaultColor
+    if (value.color === '') {
+      value.color = defaultColor;
     }
 
     return (
@@ -60,7 +60,8 @@ export const DataLinkEditor: React.FC<DataLinkEditorProps> = React.memo(
         </Field>
 
         <Field label="URL">
-          <DataLinkInput value={value.url} onChange={onUrlChange} suggestions={suggestions} placeholder="https://www.baidu.com" />
+          <DataLinkInput value={value.url} onChange={onUrlChange} suggestions={suggestions}
+            placeholder="https://www.baidu.com" />
         </Field>
 
         <Field label="Group">

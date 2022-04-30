@@ -6,16 +6,31 @@ import { NavOptions, GroupDataProps, LinkProps } from 'types';
 // , VerticalGroup
 
 const defaultLinks = [
-  { group: 'default', title: 'Grafana Dashboard', url: '/dashboards', targetBlank: false },
-  { group: 'default', title: 'Grafana Docs', url: 'https://grafana.com/docs/grafana/latest', targetBlank: true },
-  { group: 'default', title: 'Plugin Docs', url: 'https://grafana.com/tutorials/build-a-panel-plugin/', targetBlank: true },
-  { group: 'author', title: 'Author: lework', url: 'https://lework.github.io/', targetBlank: true },
+  {
+    group: 'default',
+    title: 'Grafana Dashboard', url: '/dashboards',
+    targetBlank: false
+  },
+  {
+    group: 'default',
+    title: 'Grafana Docs', url: 'https://grafana.com/docs/grafana/latest',
+    targetBlank: true
+  },
+  {
+    group: 'default',
+    title: 'Plugin Docs', url: 'https://grafana.com/tutorials/build-a-panel-plugin/',
+    targetBlank: true
+  },
   {
     group: 'author',
-    title: 'Repo: grafana-lenav-panel',
-    url: 'https://github.com/lework/grafana-lenav-panel',
-    targetBlank: true,
+    title: 'Author: lework', url: 'https://lework.github.io/',
+    targetBlank: true
   },
+  {
+    group: 'author',
+    title: 'Repo: grafana-lenav-panel', url: 'https://github.com/lework/grafana-lenav-panel',
+    targetBlank: true,
+  }
 ];
 
 interface Props extends PanelProps<NavOptions> { }
@@ -76,7 +91,11 @@ export const GroupDataLink: FC<GroupDataProps> = ({ name, data, options }) => {
   const styles = GetStyles(options.navTheme)(useTheme2());
   return (
     <div className={styles.group}>
-      {options.showGroupName && <div className={styles.groupItem}><span className={styles.groupName}>{name}</span></div>}
+      {options.showGroupName &&
+        <div className={styles.groupItem}>
+          <span className={styles.groupName}>{name}</span>
+        </div>
+      }
       <div className={styles.linkItem}>
         <HorizontalGroup align="flex-start" justify="flex-start" spacing="md" wrap>
           {data.map((option, index) => {
@@ -150,7 +169,7 @@ const getDefaultStyles = stylesFactory((theme: GrafanaTheme2) => {
       padding: 8px;
       border-radius: 2px;
       overflow: hidden;
-      transition: background .1s ease-out;
+      transition: background 0.1s ease-out;
       line-height: 1.25;
       width: 100px;
       &:hover {
@@ -164,7 +183,7 @@ const getDefaultStyles = stylesFactory((theme: GrafanaTheme2) => {
       margin-right: ${theme.spacing(1)};
       align-items: center;
       justify-content: center;
-      opacity: .9;
+      opacity: 0.9;
       filter: saturate(80%);
     `,
   };
@@ -237,7 +256,7 @@ const getBoxStyles = stylesFactory((theme: GrafanaTheme2) => {
       margin-right: ${theme.spacing(1)};
       align-items: center;
       justify-content: center;
-      opacity: .9;
+      opacity: 0.9;
       filter: saturate(80%);
     `,
   };

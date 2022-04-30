@@ -106,7 +106,6 @@ export const DataLinksInlineEditor: React.FC<DataLinksInlineEditorProps> = ({
           />
         </Modal>
       )}
-
     </>
   );
 };
