@@ -3,37 +3,41 @@ import { css, cx } from 'emotion';
 import { PanelProps, GrafanaTheme2 } from '@grafana/data';
 import { stylesFactory, useTheme2, styleMixins, Icon, HorizontalGroup } from '@grafana/ui';
 import { NavOptions, GroupDataProps, LinkProps } from 'types';
-// , VerticalGroup
 
 const defaultLinks = [
   {
     group: 'default',
-    title: 'Grafana Dashboard', url: '/dashboards',
+    title: 'Grafana Dashboard',
+    url: '/dashboards',
     targetBlank: false
   },
   {
     group: 'default',
-    title: 'Grafana Docs', url: 'https://grafana.com/docs/grafana/latest',
+    title: 'Grafana Docs',
+    url: 'https://grafana.com/docs/grafana/latest',
     targetBlank: true
   },
   {
     group: 'default',
-    title: 'Plugin Docs', url: 'https://grafana.com/tutorials/build-a-panel-plugin/',
-    targetBlank: true
-  },
-  {
-    group: 'author',
-    title: 'Author: lework', url: 'https://lework.github.io/',
-    targetBlank: true
-  },
-  {
-    group: 'author',
-    title: 'Repo: grafana-lenav-panel', url: 'https://github.com/lework/grafana-lenav-panel',
+    title: 'Plugin Docs',
+    url: 'https://grafana.com/tutorials/build-a-panel-plugin/',
     targetBlank: true,
-  }
+  },
+  {
+    group: 'author',
+    title: 'Author: lework',
+    url: 'https://lework.github.io/',
+    targetBlank: true,
+  },
+  {
+    group: 'author',
+    title: 'Repo: grafana-lenav-panel',
+    url: 'https://github.com/lework/grafana-lenav-panel',
+    targetBlank: true,
+  },
 ];
 
-interface Props extends PanelProps<NavOptions> { }
+interface Props extends PanelProps<NavOptions> {}
 
 export const NavPanel: FC<Props> = ({ options, data, width, height }) => {
   const styles = GetStyles(options.navTheme)(useTheme2());
@@ -91,11 +95,11 @@ export const GroupDataLink: FC<GroupDataProps> = ({ name, data, options }) => {
   const styles = GetStyles(options.navTheme)(useTheme2());
   return (
     <div className={styles.group}>
-      {options.showGroupName &&
+      {options.showGroupName && (
         <div className={styles.groupItem}>
           <span className={styles.groupName}>{name}</span>
         </div>
-      }
+      )}
       <div className={styles.linkItem}>
         <HorizontalGroup align="flex-start" justify="flex-start" spacing="md" wrap>
           {data.map((option, index) => {
@@ -114,7 +118,7 @@ export const GroupDataLink: FC<GroupDataProps> = ({ name, data, options }) => {
               />
             );
           })}
-        </HorizontalGroup >
+        </HorizontalGroup>
       </div>
     </div>
   );
