@@ -1,21 +1,24 @@
 import React, { FC } from 'react';
 import { css, cx } from 'emotion';
 import { PanelProps, GrafanaTheme2 } from '@grafana/data';
-import { stylesFactory, useTheme2, styleMixins, Icon, HorizontalGroup, VerticalGroup } from '@grafana/ui';
+import { stylesFactory, useTheme2, styleMixins, Icon, HorizontalGroup } from '@grafana/ui';
 import { NavOptions, GroupDataProps, LinkProps } from 'types';
+// , VerticalGroup
 
 const defaultLinks = [
-  { group: 'default', title: '请配置一个链接', url: 'https://grafana.com/docs/grafana/latest', targetBlank: true },
-  { group: 'author', title: 'author: lework', url: 'https://lework.github.io/', targetBlank: true },
+  { group: 'default', title: 'Grafana Dashboard', url: '/dashboards', targetBlank: false },
+  { group: 'default', title: 'Grafana Docs', url: 'https://grafana.com/docs/grafana/latest', targetBlank: true },
+  { group: 'default', title: 'Plugin Docs', url: 'https://grafana.com/tutorials/build-a-panel-plugin/', targetBlank: true },
+  { group: 'author', title: 'Author: lework', url: 'https://lework.github.io/', targetBlank: true },
   {
     group: 'author',
-    title: 'repo: grafana-lenav-panel',
+    title: 'Repo: grafana-lenav-panel',
     url: 'https://github.com/lework/grafana-lenav-panel',
     targetBlank: true,
   },
 ];
 
-interface Props extends PanelProps<NavOptions> {}
+interface Props extends PanelProps<NavOptions> { }
 
 export const NavPanel: FC<Props> = ({ options, data, width, height }) => {
   const styles = GetStyles(options.navTheme)(useTheme2());
@@ -51,7 +54,7 @@ export const Link: FC<LinkProps> = ({ title, url, target, color, options, icon }
   return (
     <a
       className={cx(
-        styles.item,
+        styles.link,
         css`
           color: ${color};
           font-size: ${theme.typography.size[options.navTitleSize]};
@@ -64,7 +67,7 @@ export const Link: FC<LinkProps> = ({ title, url, target, color, options, icon }
       {options['showLinkIcon'] && (
         <Icon name={target === '_self' ? 'link' : 'external-link-alt'} className={styles.icon} />
       )}
-      <span>{title}</span>
+      <span className={styles.linkName}>{title}</span>
     </a>
   );
 };
@@ -73,8 +76,8 @@ export const GroupDataLink: FC<GroupDataProps> = ({ name, data, options }) => {
   const styles = GetStyles(options.navTheme)(useTheme2());
   return (
     <div className={styles.group}>
-      <VerticalGroup spacing="xs">
-        {options.showGroupName && <div className={styles.groupName}>[{name}]</div>}
+      {options.showGroupName && <div className={styles.groupItem}><span className={styles.groupName}>{name}</span></div>}
+      <div className={styles.linkItem}>
         <HorizontalGroup align="flex-start" justify="flex-start" spacing="md" wrap>
           {data.map((option, index) => {
             if (!option.url) {
@@ -92,8 +95,8 @@ export const GroupDataLink: FC<GroupDataProps> = ({ name, data, options }) => {
               />
             );
           })}
-        </HorizontalGroup>
-      </VerticalGroup>
+        </HorizontalGroup >
+      </div>
     </div>
   );
 };
@@ -101,7 +104,9 @@ export const GroupDataLink: FC<GroupDataProps> = ({ name, data, options }) => {
 const getDefaultStyles = stylesFactory((theme: GrafanaTheme2) => {
   return {
     container: css`
+      box-sizing: border-box;
       background-size: cover;
+      overflow: auto;
       height: 100%;
       justify-content: space-between;
       padding: 0 ${theme.spacing(1)};
@@ -115,29 +120,52 @@ const getDefaultStyles = stylesFactory((theme: GrafanaTheme2) => {
       }
     `,
     group: css`
+      position: relative;
+      display: flex;
       margin-bottom: ${theme.spacing(2)};
     `,
-    groupName: css`
-      font-weight: ${theme.typography.fontWeightBold};
-      font-size: ${theme.typography.h4.fontSize};
-      margin-bottom: 1px solid ${theme.spacing(2)};
-      color: orange;
-    `,
-    item: css`
-      margin-right: ${theme.spacing(3)};
-      text-decoration: underline;
+    groupItem: css`
+      position: relative;
+      display: flex;
+      max-width: 10%;
       overflow: hidden;
+      color: ${theme.colors.text.secondary};
+      font-weight: ${theme.typography.fontWeightMedium};
+      font-size: ${theme.typography.h5.fontSize};
+      align-items: center;
+      flex: 0 0 10%;
+    `,
+    groupName: css`
       white-space: nowrap;
-      text-overflow: ellipsis;
-      @media only screen and (max-width: ${theme.breakpoints.values.sm}) {
-        margin-right: 8px;
-        width: 100px;
+    `,
+    linkItem: css`
+      display: flex;
+      max-width: 90%;
+      overflow: hidden;
+      flex: 0 0 90%;
+    `,
+    link: css`
+      position: relative;
+      display: inline-flex;
+      padding: 8px;
+      border-radius: 2px;
+      overflow: hidden;
+      transition: background .1s ease-out;
+      line-height: 1.25;
+      width: 100px;
+      &:hover {
+        background: ${styleMixins.hoverColor(theme.v1.colors.bg2, theme)};
       }
+    `,
+    linkName: css`
+      white-space: nowrap;
     `,
     icon: css`
       margin-right: ${theme.spacing(1)};
       align-items: center;
       justify-content: center;
+      opacity: .9;
+      filter: saturate(80%);
     `,
   };
 });
@@ -145,7 +173,9 @@ const getDefaultStyles = stylesFactory((theme: GrafanaTheme2) => {
 const getBoxStyles = stylesFactory((theme: GrafanaTheme2) => {
   return {
     container: css`
+      box-sizing: border-box;
       background-size: cover;
+      overflow: auto;
       height: 100%;
       justify-content: space-between;
       padding: 0 ${theme.spacing(1)};
@@ -159,24 +189,35 @@ const getBoxStyles = stylesFactory((theme: GrafanaTheme2) => {
       }
     `,
     group: css`
+      position: relative;
+      display: flex;
       margin-bottom: ${theme.spacing(2)};
     `,
-    groupName: css`
-      font-weight: ${theme.typography.fontWeightBold};
-      font-size: ${theme.typography.h4.fontSize};
-      margin-bottom: 1px solid ${theme.spacing(2)};
-      color: orange;
+    groupItem: css`
+      position: relative;
+      display: flex;
+      max-width: 10%;
+      overflow: hidden;
+      color: ${theme.colors.text.secondary};
+      font-weight: ${theme.typography.fontWeightMedium};
+      font-size: ${theme.typography.h5.fontSize};
+      align-items: center;
+      flex: 0 0 10%;
     `,
-    item: css`
+    groupName: css`
+      white-space: nowrap;
+    `,
+    linkItem: css`
+      display: flex;
+      max-width: 90%;
+      overflow: hidden;
+      flex: 0 0 90%;
+    `,
+    link: css`
       background: ${theme.v1.colors.bg2};
-      &:hover {
-        background: ${styleMixins.hoverColor(theme.v1.colors.bg2, theme)};
-      }
       box-shadow: ${theme.v1.shadows.listItem};
       border-radius: ${theme.v1.border.radius.md};
-
       padding: ${theme.spacing(1)};
-      margin-right: ${theme.spacing(2)};
       align-items: center;
       overflow: hidden;
       white-space: nowrap;
@@ -185,11 +226,19 @@ const getBoxStyles = stylesFactory((theme: GrafanaTheme2) => {
         margin-right: 8px;
         width: 100px;
       }
+      &:hover {
+        background: ${styleMixins.hoverColor(theme.v1.colors.bg2, theme)};
+      }
+    `,
+    linkName: css`
+      white-space: nowrap;
     `,
     icon: css`
       margin-right: ${theme.spacing(1)};
       align-items: center;
       justify-content: center;
+      opacity: .9;
+      filter: saturate(80%);
     `,
   };
 });

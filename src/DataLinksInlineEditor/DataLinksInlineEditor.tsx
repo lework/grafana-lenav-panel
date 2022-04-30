@@ -66,6 +66,9 @@ export const DataLinksInlineEditor: React.FC<DataLinksInlineEditorProps> = ({
 
   return (
     <>
+      <Button size="sm" icon="plus" onClick={onDataLinkAdd} variant="secondary" className={styles.wrapper}>
+        Add link
+      </Button>
       {linksSafe.length > 0 && (
         <div className={styles.wrapper}>
           {linksSafe.map((l, i) => {
@@ -104,9 +107,6 @@ export const DataLinksInlineEditor: React.FC<DataLinksInlineEditorProps> = ({
         </Modal>
       )}
 
-      <Button size="sm" icon="plus" onClick={onDataLinkAdd} variant="secondary">
-        Add link
-      </Button>
     </>
   );
 };

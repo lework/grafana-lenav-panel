@@ -1,16 +1,16 @@
 {
   "$schema": "https://raw.githubusercontent.com/grafana/grafana/master/docs/sources/developers/plugins/plugin.schema.json",
   "type": "panel",
-  "name": "LeNav Panel",
+  "name": "Website Navigation",
   "id": "lework-lenav-panel",
   "info": {
-    "description": "Site navigation",
+    "description": "A panel to display website navigation.",
     "author": {
       "name": "lework",
       "url": "https://github.com/lework/grafana-lenav-panel"
     },
     "keywords": [
-      "nav site"
+      "website navigation"
     ],
     "logos": {
       "small": "img/logo.svg",
@@ -40,6 +40,6 @@
     "updated": "%TODAY%"
   },
   "dependencies": {
-    "grafanaDependency": ">=7.0.0"
+    "grafanaDependency": ">=8.0.0"
   }
 }

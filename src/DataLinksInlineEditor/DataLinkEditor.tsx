@@ -23,7 +23,7 @@ const getStyles = (theme: GrafanaTheme2) => ({
   `,
 });
 
-const defaultColor = 'rgb(204, 204, 220)';
+const defaultColor = 'rgb(221, 221, 221)';
 
 export const DataLinkEditor: React.FC<DataLinkEditorProps> = React.memo(
   ({ index, value, onChange, suggestions, isLast }) => {
@@ -49,25 +49,29 @@ export const DataLinkEditor: React.FC<DataLinkEditorProps> = React.memo(
       onChange(index, { ...value, targetBlank: !value.targetBlank });
     };
 
+    if (value.color == '') {
+      value.color = defaultColor
+    }
+
     return (
       <div className={styles.listItem}>
         <Field label="Title">
-          <Input value={value.title} required onChange={onTitleChange} placeholder="链接名称" />
+          <Input value={value.title} required onChange={onTitleChange} placeholder="baidu" />
         </Field>
 
         <Field label="URL">
-          <DataLinkInput value={value.url} onChange={onUrlChange} suggestions={suggestions} />
+          <DataLinkInput value={value.url} onChange={onUrlChange} suggestions={suggestions} placeholder="https://www.baidu.com" />
         </Field>
 
         <Field label="Group">
-          <Input value={value.group} onChange={onGroupChange} placeholder="分组名称" />
+          <Input value={value.group} onChange={onGroupChange} placeholder="default" />
         </Field>
 
-        <Field label="字体颜色">
+        <Field label="Font Color">
           <ColorPicker color={value?.color ?? defaultColor} onChange={onColorChange} enableNamedColors={false} />
         </Field>
 
-        <Field label="在新标签页中打开">
+        <Field label="TargetBlank">
           <Switch value={value.targetBlank || false} onChange={onOpenInNewTabChanged} />
         </Field>
 

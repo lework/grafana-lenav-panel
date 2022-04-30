@@ -17,17 +17,19 @@ export interface DataLinksListItemProps {
 export const DataLinksListItem: FC<DataLinksListItemProps> = ({ link, onEdit, onRemove }) => {
   const theme = useTheme2();
   const styles = getDataLinkListItemStyles(theme);
-  const { title = '', url = '' } = link;
+  const { title = '', url = '', group = '', color = '' } = link;
 
   const hasTitle = title.trim() !== '';
   const hasUrl = url.trim() !== '';
+  const hasGroup = group.trim() !== '';
+  const hasColor = color.trim() !== '';
 
   return (
     <div className={styles.wrapper}>
       <VerticalGroup spacing="xs">
         <HorizontalGroup justify="space-between" align="flex-start" width="100%">
-          <div className={cx(styles.title, !hasTitle && styles.notConfigured)}>
-            {hasTitle ? title : 'Data link title not provided'}
+          <div className={cx(styles.title, !hasTitle && styles.notConfigured, hasColor && css`color: ${color};`)}>
+            {hasGroup && `[${group}] `} {hasTitle ? title : 'Data link title not provided'}
           </div>
           <HorizontalGroup>
             <IconButton name="pen" onClick={onEdit} />

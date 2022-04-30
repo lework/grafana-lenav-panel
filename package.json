@@ -1,7 +1,7 @@
 {
-  "name": "lework-grafana-lenav-panel",
+  "name": "grafana-lenav-panel",
   "version": "1.0.0",
-  "description": "Site navigation",
+  "description": "A panel to display website navigation.",
   "scripts": {
     "build": "grafana-toolkit plugin:build",
     "test": "grafana-toolkit plugin:test",

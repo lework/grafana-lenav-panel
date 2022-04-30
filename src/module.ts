@@ -4,25 +4,25 @@ import { NavPanel } from './NavPanel';
 import { DataLinksValueEditor } from './DataLinksInlineEditor/DataLinksValueEditor';
 
 export const plugin = new PanelPlugin<NavOptions>(NavPanel).setPanelOptions((builder) => {
-  const mainCategory = ['导航配置'];
+  const mainCategory = ['Navigation configuration'];
 
   return builder
     .addBooleanSwitch({
       path: 'showLinkIcon',
-      name: '显示图标',
-      defaultValue: false,
+      name: 'Display icon',
+      defaultValue: true,
       category: mainCategory,
     })
     .addBooleanSwitch({
       path: 'showGroupName',
-      name: '显示组名',
-      defaultValue: false,
+      name: 'Display group name',
+      defaultValue: true,
       category: mainCategory,
     })
     .addRadio({
       path: 'navTitleSize',
       defaultValue: 'md',
-      name: '字体大小',
+      name: 'Font Size',
       category: mainCategory,
       settings: {
         options: [
@@ -43,21 +43,20 @@ export const plugin = new PanelPlugin<NavOptions>(NavPanel).setPanelOptions((bui
     })
     .addNumberInput({
       path: 'navWidth',
-      name: '链接宽度',
+      name: 'Link width',
       defaultValue: 160,
       settings: {
         placeholder: 'Auto',
         integer: false,
-        min: 100,
+        min: 80,
         max: 200,
       },
       category: mainCategory,
     })
     .addSelect({
       path: 'navTheme',
-      name: '导航样式',
+      name: 'Style',
       category: mainCategory,
-      // description: '导航显示的样式',
       defaultValue: 'default',
       settings: {
         options: [
@@ -69,7 +68,7 @@ export const plugin = new PanelPlugin<NavOptions>(NavPanel).setPanelOptions((bui
     .addCustomEditor({
       id: 'navData',
       path: 'navData',
-      name: '链接',
+      name: 'Link',
       category: mainCategory,
       editor: DataLinksValueEditor as any,
     });
