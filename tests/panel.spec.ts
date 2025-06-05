@@ -13,7 +13,6 @@ test('should display "Default" in case panel data is empty', async ({
 test('should display group name when "Display group name" option is enabled', async ({
   gotoPanelEditPage,
   readProvisionedDashboard,
-  page,
 }) => {
   const dashboard = await readProvisionedDashboard({ fileName: 'dashboard.json' });
   const panelEditPage = await gotoPanelEditPage({ dashboard, id: '2' });
@@ -21,5 +20,5 @@ test('should display group name when "Display group name" option is enabled', as
   const showGroupName = options.getSwitch('Display group name');
 
   await showGroupName.check();
-  await expect(page.getByTitle('AI')).toBeVisible();
+  await expect(panelEditPage.panel.locator.getByTitle('AI')).toBeVisible();
 });
