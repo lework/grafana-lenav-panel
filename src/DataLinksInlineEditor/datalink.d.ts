@@ -1,5 +1,6 @@
-import { DataQuery, InterpolateFunction } from '@grafana/data';
-import { ThemeColors, IconName } from '@grafana/ui';
+import { InterpolateFunction } from '@grafana/data';
+import { DataQuery } from '@grafana/schema';
+import { IconName } from '@grafana/ui';
 import { RoleType } from '../types';
 
 /**
