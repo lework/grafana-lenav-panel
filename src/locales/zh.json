@@ -1,0 +1,107 @@
+{
+  "defaultLinks": {
+    "grafanaDashboard": "Grafana 仪表板",
+    "grafanaDocs": "Grafana 文档",
+    "pluginDocs": "插件文档",
+    "author": "作者：lework",
+    "repo": "代码仓库：grafana-lenav-panel"
+  },
+  "errors": {
+    "noUserInfo": "无法获取Grafana用户信息，默认不显示受限链接",
+    "permissionCheck": "检查用户权限时出错："
+  },
+  "panelOptions": {
+    "category": "导航配置",
+    "showLinkIcon": {
+      "name": "显示图标"
+    },
+    "showGroupName": {
+      "name": "显示分组名称"
+    },
+    "navTitleSize": {
+      "name": "链接标题字体大小 (px)",
+      "description": "字体大小（像素单位，8-32）"
+    },
+    "navWidth": {
+      "name": "链接宽度",
+      "placeholder": "自动"
+    },
+    "navTheme": {
+      "name": "样式",
+      "options": {
+        "default": "默认",
+        "box": "方框"
+      }
+    },
+    "navData": {
+      "name": "链接"
+    }
+  },
+  "linkEditor": {
+    "addLink": "添加链接",
+    "manageLinks": "管理链接 ({{count}})",
+    "addNewLink": "添加新链接",
+    "editLink": "编辑链接",
+    "deleteLink": "删除链接",
+    "searchPlaceholder": "搜索标题、URL或分组...",
+    "clearFilters": "清除筛选",
+    "searchResults": "找到 {{count}} 个匹配的链接",
+    "emptyStateNoLinks": "暂无链接，点击\"添加新链接\"开始创建",
+    "emptyStateNoMatches": "没有找到匹配的链接，尝试修改搜索条件",
+    "deleteConfirmBody": "确定要删除链接 {{title}} 吗？",
+    "deleteConfirmButton": "删除",
+    "cancelButton": "取消",
+    "saveButton": "保存",
+    "editLinkAria": "编辑链接",
+    "deleteLinkAria": "删除链接",
+    "editDataLinkAria": "编辑数据链接",
+    "deleteDataLinkAria": "删除数据链接",
+    "sortByAria": "按{{field}}排序",
+    "defaultTitleText": "未提供数据链接标题",
+    "defaultUrlText": "未提供数据链接URL",
+    "formLabels": {
+      "title": "标题",
+      "url": "URL",
+      "group": "分组",
+      "sort": "排序",
+      "fontColor": "字体颜色",
+      "openInNewTab": "在新标签页中打开",
+      "authorizedRoles": "授权角色"
+    },
+    "formDescriptions": {
+      "group": "选择已有分组或输入新分组名称",
+      "sort": "排序优先级，数值越大排在越前面，默认为 0",
+      "authorizedRoles": "设置可访问此链接的角色，不选择则表示所有人可见"
+    },
+    "formPlaceholders": {
+      "title": "百度一下",
+      "url": "https://www.baidu.com",
+      "group": "默认",
+      "sort": "0",
+      "roles": "所有人可见"
+    },
+    "validationErrors": {
+      "titleRequired": "标题不能为空",
+      "urlRequired": "URL不能为空"
+    },
+    "infoText": "通过数据链接，您可以引用数据变量，如系列名称、标签和值。按 CMD+Space 组合键，",
+    "tableHeaders": {
+      "group": "分组",
+      "sort": "排序",
+      "title": "标题",
+      "url": "URL",
+      "roles": "权限",
+      "targetBlank": "新窗口",
+      "actions": "操作"
+    },
+    "tableCells": {
+      "defaultGroup": "默认",
+      "noTitle": "未设置标题",
+      "noUrl": "未设置URL",
+      "allUsersVisible": "所有人可见",
+      "yes": "是",
+      "no": "否",
+      "unnamed": "未命名"
+    }
+  }
+}

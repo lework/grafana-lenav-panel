@@ -2,51 +2,45 @@ import { PanelPlugin } from '@grafana/data';
 import { NavOptions } from './types';
 import { NavPanel } from './NavPanel';
 import { DataLinksValueEditor } from './DataLinksInlineEditor/DataLinksValueEditor';
+import { getPanelOptionsText } from './i18n';
+
+// 获取国际化的面板选项文本
+const t = getPanelOptionsText();
 
 export const plugin = new PanelPlugin<NavOptions>(NavPanel).setPanelOptions((builder) => {
-  const mainCategory = ['Navigation configuration'];
+  const mainCategory = [t.category];
 
   return builder
     .addBooleanSwitch({
       path: 'showLinkIcon',
-      name: 'Display icon',
+      name: t.showLinkIcon,
       defaultValue: true,
       category: mainCategory,
     })
     .addBooleanSwitch({
       path: 'showGroupName',
-      name: 'Display group name',
+      name: t.showGroupName,
       defaultValue: true,
       category: mainCategory,
     })
-    .addRadio({
+    .addNumberInput({
       path: 'navTitleSize',
-      defaultValue: 'md',
-      name: 'Font Size',
-      category: mainCategory,
+      name: t.navTitleSize.name,
       settings: {
-        options: [
-          {
-            value: 'sm',
-            label: 'Small',
-          },
-          {
-            value: 'md',
-            label: 'Medium',
-          },
-          {
-            value: 'lg',
-            label: 'Large',
-          },
-        ],
+        min: 8,
+        max: 32,
+        step: 1,
+        placeholder: '14',
       },
+      defaultValue: 14,
+      category: mainCategory,
     })
     .addNumberInput({
       path: 'navWidth',
-      name: 'Link width',
+      name: t.navWidth.name,
       defaultValue: 160,
       settings: {
-        placeholder: 'Auto',
+        placeholder: t.navWidth.placeholder,
         integer: false,
         min: 80,
         max: 200,
@@ -55,20 +49,20 @@ export const plugin = new PanelPlugin<NavOptions>(NavPanel).setPanelOptions((bui
     })
     .addSelect({
       path: 'navTheme',
-      name: 'Style',
+      name: t.navTheme.name,
       category: mainCategory,
       defaultValue: 'default',
       settings: {
         options: [
-          { value: 'default', label: 'Default' },
-          { value: 'box', label: 'Box' },
+          { value: 'default', label: t.navTheme.default },
+          { value: 'box', label: t.navTheme.box },
         ],
       },
     })
     .addCustomEditor({
       id: 'navData',
       path: 'navData',
-      name: 'Link',
+      name: t.navData,
       category: mainCategory,
       editor: DataLinksValueEditor as any,
     });

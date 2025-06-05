@@ -1,7 +1,9 @@
 import { IconName } from '@grafana/ui';
+import { InterpolateFunction } from '@grafana/data';
 import { DataLink } from './DataLinksInlineEditor/datalink';
 
-type FontSize = 'sm' | 'md' | 'lg';
+// 角色权限类型
+export type RoleType = 'Admin' | 'Editor' | 'Viewer' | string;
 
 export interface LinkProps {
   title: string;
@@ -10,19 +12,24 @@ export interface LinkProps {
   color: string;
   options: NavOptions;
   icon: IconName;
+  sort?: number;
+  roles?: RoleType[]; // 添加角色权限控制
 }
 
 export interface NavOptions {
   showLinkIcon: boolean;
   showGroupName: boolean;
-  navTitleSize: FontSize;
+  navTitleSize: number; // 改为数字，表示字体大小（px）
   navTheme: string;
   navWidth: number;
   navData: DataLink;
+  groupSorting: { [groupName: string]: number };
 }
 
 export interface GroupDataProps {
   name: string;
   data: DataLink[];
   options: NavOptions;
+  replaceVariables: InterpolateFunction;
+  sort?: number;
 }

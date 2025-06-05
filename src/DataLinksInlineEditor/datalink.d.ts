@@ -1,5 +1,6 @@
 import { DataQuery, InterpolateFunction } from '@grafana/data';
-import { ThemeColors } from '@grafana/ui';
+import { ThemeColors, IconName } from '@grafana/ui';
+import { RoleType } from '../types';
 
 /**
  * Callback info for DataLink click events
@@ -23,6 +24,8 @@ export interface DataLink<T extends DataQuery = any> {
   url: string;
   group: string;
   color: string;
+  sort?: number;
+  roles?: RoleType[];
   onBuildUrl?: (event: DataLinkClickEvent) => string;
   onClick?: (event: DataLinkClickEvent) => void;
   internal?: InternalDataLink<T>;

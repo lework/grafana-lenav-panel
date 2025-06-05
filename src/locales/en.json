@@ -1,0 +1,107 @@
+{
+  "defaultLinks": {
+    "grafanaDashboard": "Grafana Dashboard",
+    "grafanaDocs": "Grafana Docs",
+    "pluginDocs": "Plugin Docs",
+    "author": "Author: lework",
+    "repo": "Repo: grafana-lenav-panel"
+  },
+  "errors": {
+    "noUserInfo": "Unable to get Grafana user information, restricted links are hidden by default",
+    "permissionCheck": "Error checking user permissions:"
+  },
+  "panelOptions": {
+    "category": "Navigation configuration",
+    "showLinkIcon": {
+      "name": "Display icon"
+    },
+    "showGroupName": {
+      "name": "Display group name"
+    },
+    "navTitleSize": {
+      "name": "Link title font size (px)",
+      "description": "Font size in pixels (8-32)"
+    },
+    "navWidth": {
+      "name": "Link width",
+      "placeholder": "Auto"
+    },
+    "navTheme": {
+      "name": "Style",
+      "options": {
+        "default": "Default",
+        "box": "Box"
+      }
+    },
+    "navData": {
+      "name": "Link"
+    }
+  },
+  "linkEditor": {
+    "addLink": "Add Link",
+    "manageLinks": "Manage Links ({{count}})",
+    "addNewLink": "Add New Link",
+    "editLink": "Edit Link",
+    "deleteLink": "Delete Link",
+    "searchPlaceholder": "Search title, URL or group...",
+    "clearFilters": "Clear Filters",
+    "searchResults": "Found {{count}} matching links",
+    "emptyStateNoLinks": "No links yet, click \"Add New Link\" to get started",
+    "emptyStateNoMatches": "No matching links found, try adjusting your search criteria",
+    "deleteConfirmBody": "Are you sure you want to delete link {{title}}?",
+    "deleteConfirmButton": "Delete",
+    "cancelButton": "Cancel",
+    "saveButton": "Save",
+    "editLinkAria": "Edit link",
+    "deleteLinkAria": "Delete link",
+    "editDataLinkAria": "Edit data link",
+    "deleteDataLinkAria": "Delete data link",
+    "sortByAria": "Sort by {{field}}",
+    "defaultTitleText": "Data link title not provided",
+    "defaultUrlText": "Data link url not provided",
+    "formLabels": {
+      "title": "Title",
+      "url": "URL",
+      "group": "Group",
+      "sort": "Sort",
+      "fontColor": "Font Color",
+      "openInNewTab": "Open in new tab",
+      "authorizedRoles": "Authorized Roles"
+    },
+    "formDescriptions": {
+      "group": "Select existing group or enter new group name",
+      "sort": "Sort priority, higher values appear first, default is 0",
+      "authorizedRoles": "Set roles that can access this link, leave empty for public access"
+    },
+    "formPlaceholders": {
+      "title": "baidu",
+      "url": "https://www.baidu.com",
+      "group": "default",
+      "sort": "0",
+      "roles": "Visible to all"
+    },
+    "validationErrors": {
+      "titleRequired": "Title cannot be empty",
+      "urlRequired": "URL cannot be empty"
+    },
+    "infoText": "With data links you can reference data variables like series name, labels and values. Type CMD+Space,",
+    "tableHeaders": {
+      "group": "Group",
+      "sort": "Sort",
+      "title": "Title",
+      "url": "URL",
+      "roles": "Permissions",
+      "targetBlank": "New Window",
+      "actions": "Actions"
+    },
+    "tableCells": {
+      "defaultGroup": "Default",
+      "noTitle": "No title set",
+      "noUrl": "No URL set",
+      "allUsersVisible": "Visible to all",
+      "yes": "Yes",
+      "no": "No",
+      "unnamed": "Unnamed"
+    }
+  }
+}

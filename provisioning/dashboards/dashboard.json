@@ -1,0 +1,687 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": null,
+  "links": [],
+  "panels": [
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "id": 1,
+      "options": {
+        "navTheme": "default",
+        "navTitleSize": 14,
+        "navWidth": 160,
+        "showGroupName": true,
+        "showLinkIcon": true
+      },
+      "pluginVersion": "1.1.0",
+      "title": "Website Navigation Panel",
+      "type": "lework-lenav-panel"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
+      "id": 2,
+      "options": {
+        "navData": [
+          {
+            "color": "rgb(221, 221, 221)",
+            "group": "社交",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "微博",
+            "url": "https://weibo.com/"
+          },
+          {
+            "color": "rgb(221, 221, 221)",
+            "group": "社交",
+            "icon": "link",
+            "roles": ["Editor"],
+            "sort": 0,
+            "targetBlank": true,
+            "title": "知乎",
+            "url": "https://www.zhihu.com/"
+          },
+          {
+            "color": "rgb(221, 221, 221)",
+            "group": "社交",
+            "icon": "link",
+            "roles": ["Admin"],
+            "sort": 0,
+            "targetBlank": true,
+            "title": "小红书",
+            "url": "https://www.xiaohongshu.com/"
+          },
+          {
+            "color": "rgb(221, 221, 221)",
+            "group": "社交",
+            "icon": "link",
+            "roles": ["Editor", "Admin", "Viewer"],
+            "sort": 0,
+            "targetBlank": true,
+            "title": "百度贴吧",
+            "url": "https://tieba.baidu.com/"
+          },
+          {
+            "color": "rgb(221, 221, 221)",
+            "group": "社交",
+            "icon": "link",
+            "roles": ["Viewer"],
+            "sort": 0,
+            "targetBlank": true,
+            "title": "抖音",
+            "url": "https://www.douyin.com/"
+          },
+          {
+            "color": "rgb(221, 221, 221)",
+            "group": "社交",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "豆瓣",
+            "url": "https://www.douban.com/"
+          },
+          {
+            "color": "#73BF69",
+            "group": "AI",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "ChatGPT",
+            "url": "https://chat.openai.com/"
+          },
+          {
+            "color": "#5794F2",
+            "group": "AI",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "Gemini",
+            "url": "https://gemini.google.com/"
+          },
+          {
+            "color": "#B877D9",
+            "group": "AI",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "Coze",
+            "url": "https://www.coze.com/"
+          },
+          {
+            "color": "#A352CC",
+            "group": "AI",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "Poe",
+            "url": "https://poe.com/"
+          },
+          {
+            "color": "#8AB8FF",
+            "group": "AI",
+            "icon": "link",
+            "roles": ["Editor"],
+            "sort": 0,
+            "targetBlank": true,
+            "title": "Deepseek",
+            "url": "https://www.deepseek.com/"
+          },
+          {
+            "color": "#8F3BB8",
+            "group": "AI",
+            "icon": "link",
+            "roles": ["Admin"],
+            "sort": 0,
+            "targetBlank": true,
+            "title": "通义千问",
+            "url": "https://tongyi.aliyun.com/qianwen/"
+          },
+          {
+            "color": "#C4162A",
+            "group": "开发",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "GitHub",
+            "url": "https://github.com/"
+          },
+          {
+            "color": "#E02F44",
+            "group": "开发",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "GitLab",
+            "url": "https://gitlab.com/"
+          },
+          {
+            "color": "#F2495C",
+            "group": "开发",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "阿里云",
+            "url": "https://www.aliyun.com/"
+          },
+          {
+            "color": "#FF7383",
+            "group": "开发",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "腾讯云",
+            "url": "https://cloud.tencent.com/"
+          },
+          {
+            "color": "#FFA6B0",
+            "group": "开发",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "AWS",
+            "url": "https://aws.amazon.com/"
+          },
+          {
+            "color": "#FFA6B0",
+            "group": "开发",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "Docker Hub",
+            "url": "https://hub.docker.com/"
+          },
+          {
+            "color": "#FA6400",
+            "group": "分析",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "Ping.pe",
+            "url": "https://ping.pe/"
+          },
+          {
+            "color": "#FF780A",
+            "group": "分析",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "17CE",
+            "url": "https://17ce.com/"
+          },
+          {
+            "color": "#FF9830",
+            "group": "分析",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "DNS Lookup",
+            "url": "https://www.digitalocean.com/community/tools/dns"
+          },
+          {
+            "color": "#FFB357",
+            "group": "分析",
+            "icon": "link",
+            "sort": 0,
+            "title": "PageSpeed",
+            "url": "https://pagespeed.web.dev/"
+          },
+          {
+            "color": "#FFCB7D",
+            "group": "分析",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "VirusTotal",
+            "url": "https://www.virustotal.com/"
+          },
+          {
+            "color": "#FFCB7D",
+            "group": "分析",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "阿里云运维检测",
+            "url": "https://boce.aliyun.com/"
+          },
+          {
+            "color": "#E0B400",
+            "group": "门户",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "腾讯网",
+            "url": "https://www.qq.com/"
+          },
+          {
+            "color": "#F2CC0C",
+            "group": "门户",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "网易",
+            "url": "https://www.163.com/"
+          },
+          {
+            "color": "#FADE2A",
+            "group": "门户",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "新浪网",
+            "url": "https://www.sina.com.cn/"
+          },
+          {
+            "color": "#FFEE52",
+            "group": "门户",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "搜狐",
+            "url": "https://www.sohu.com/"
+          },
+          {
+            "color": "#FFF899",
+            "group": "门户",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "凤凰网",
+            "url": "https://www.ifeng.com/"
+          },
+          {
+            "color": "#FFF899",
+            "group": "门户",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "央视网",
+            "url": "https://www.cctv.com/"
+          }
+        ],
+        "navTheme": "default",
+        "navTitleSize": 14,
+        "navWidth": 115,
+        "showGroupName": true,
+        "showLinkIcon": true
+      },
+      "pluginVersion": "1.0.0",
+      "title": "Website Navigation Panel",
+      "type": "lework-lenav-panel"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 9
+      },
+      "id": 3,
+      "options": {
+        "navTheme": "box",
+        "navTitleSize": 14,
+        "navWidth": 160,
+        "showGroupName": false,
+        "showLinkIcon": false
+      },
+      "pluginVersion": "1.0.0",
+      "title": "Website Navigation Panel",
+      "type": "lework-lenav-panel"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 9
+      },
+      "id": 4,
+      "options": {
+        "navData": [
+          {
+            "color": "rgb(221, 221, 221)",
+            "group": "社交",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "微博",
+            "url": "https://weibo.com/"
+          },
+          {
+            "color": "rgb(221, 221, 221)",
+            "group": "社交",
+            "icon": "link",
+            "roles": ["Editor"],
+            "sort": 0,
+            "targetBlank": true,
+            "title": "知乎",
+            "url": "https://www.zhihu.com/"
+          },
+          {
+            "color": "rgb(221, 221, 221)",
+            "group": "社交",
+            "icon": "link",
+            "roles": ["Admin"],
+            "sort": 0,
+            "targetBlank": true,
+            "title": "小红书",
+            "url": "https://www.xiaohongshu.com/"
+          },
+          {
+            "color": "rgb(221, 221, 221)",
+            "group": "社交",
+            "icon": "link",
+            "roles": ["Editor", "Admin", "Viewer"],
+            "sort": 0,
+            "targetBlank": true,
+            "title": "百度贴吧",
+            "url": "https://tieba.baidu.com/"
+          },
+          {
+            "color": "rgb(221, 221, 221)",
+            "group": "社交",
+            "icon": "link",
+            "roles": ["Viewer"],
+            "sort": 0,
+            "targetBlank": true,
+            "title": "抖音",
+            "url": "https://www.douyin.com/"
+          },
+          {
+            "color": "rgb(221, 221, 221)",
+            "group": "社交",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "豆瓣",
+            "url": "https://www.douban.com/"
+          },
+          {
+            "color": "#73BF69",
+            "group": "AI",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "ChatGPT",
+            "url": "https://chat.openai.com/"
+          },
+          {
+            "color": "#5794F2",
+            "group": "AI",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "Gemini",
+            "url": "https://gemini.google.com/"
+          },
+          {
+            "color": "#B877D9",
+            "group": "AI",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "Coze",
+            "url": "https://www.coze.com/"
+          },
+          {
+            "color": "#A352CC",
+            "group": "AI",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "Poe",
+            "url": "https://poe.com/"
+          },
+          {
+            "color": "#8AB8FF",
+            "group": "AI",
+            "icon": "link",
+            "roles": ["Editor"],
+            "sort": 0,
+            "targetBlank": true,
+            "title": "Deepseek",
+            "url": "https://www.deepseek.com/"
+          },
+          {
+            "color": "#8F3BB8",
+            "group": "AI",
+            "icon": "link",
+            "roles": ["Admin"],
+            "sort": 0,
+            "targetBlank": true,
+            "title": "通义千问",
+            "url": "https://tongyi.aliyun.com/qianwen/"
+          },
+          {
+            "color": "#C4162A",
+            "group": "开发",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "GitHub",
+            "url": "https://github.com/"
+          },
+          {
+            "color": "#E02F44",
+            "group": "开发",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "GitLab",
+            "url": "https://gitlab.com/"
+          },
+          {
+            "color": "#F2495C",
+            "group": "开发",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "阿里云",
+            "url": "https://www.aliyun.com/"
+          },
+          {
+            "color": "#FF7383",
+            "group": "开发",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "腾讯云",
+            "url": "https://cloud.tencent.com/"
+          },
+          {
+            "color": "#FFA6B0",
+            "group": "开发",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "AWS",
+            "url": "https://aws.amazon.com/"
+          },
+          {
+            "color": "#FFA6B0",
+            "group": "开发",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "Docker Hub",
+            "url": "https://hub.docker.com/"
+          },
+          {
+            "color": "#FA6400",
+            "group": "分析",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "Ping.pe",
+            "url": "https://ping.pe/"
+          },
+          {
+            "color": "#FF780A",
+            "group": "分析",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "17CE",
+            "url": "https://17ce.com/"
+          },
+          {
+            "color": "#FF9830",
+            "group": "分析",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "DNS Lookup",
+            "url": "https://www.digitalocean.com/community/tools/dns"
+          },
+          {
+            "color": "#FFB357",
+            "group": "分析",
+            "icon": "link",
+            "sort": 0,
+            "title": "PageSpeed",
+            "url": "https://pagespeed.web.dev/"
+          },
+          {
+            "color": "#FFCB7D",
+            "group": "分析",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "VirusTotal",
+            "url": "https://www.virustotal.com/"
+          },
+          {
+            "color": "#FFCB7D",
+            "group": "分析",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "阿里云运维检测",
+            "url": "https://boce.aliyun.com/"
+          },
+          {
+            "color": "#E0B400",
+            "group": "门户",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "腾讯网",
+            "url": "https://www.qq.com/"
+          },
+          {
+            "color": "#F2CC0C",
+            "group": "门户",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "网易",
+            "url": "https://www.163.com/"
+          },
+          {
+            "color": "#FADE2A",
+            "group": "门户",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "新浪网",
+            "url": "https://www.sina.com.cn/"
+          },
+          {
+            "color": "#FFEE52",
+            "group": "门户",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "搜狐",
+            "url": "https://www.sohu.com/"
+          },
+          {
+            "color": "#FFF899",
+            "group": "门户",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "凤凰网",
+            "url": "https://www.ifeng.com/"
+          },
+          {
+            "color": "#FFF899",
+            "group": "门户",
+            "icon": "link",
+            "sort": 0,
+            "targetBlank": true,
+            "title": "央视网",
+            "url": "https://www.cctv.com/"
+          }
+        ],
+        "navTheme": "box",
+        "navTitleSize": 14,
+        "navWidth": 115,
+        "showGroupName": true,
+        "showLinkIcon": true
+      },
+      "pluginVersion": "1.1.0",
+      "title": "Website Navigation Panel",
+      "type": "lework-lenav-panel"
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 41,
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-15m",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Provisioned Website Navigation dashboard",
+  "uid": "a538aeff-5a8a-42a5-901c-938d896fdd6f",
+  "version": 1,
+  "weekStart": ""
+}
