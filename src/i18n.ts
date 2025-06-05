@@ -1,4 +1,5 @@
 import i18n from 'i18next';
+import { config } from '@grafana/runtime';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
@@ -7,10 +8,8 @@ import zh from './locales/zh.json';
 
 const getGrafanaLocale = (): string => {
   try {
-    const grafanaBootData = (window as any).grafanaBootData;
-    if (grafanaBootData && grafanaBootData.user && grafanaBootData.user.language) {
-      console.log('grafanaBootData.user', grafanaBootData.user);
-      const language = grafanaBootData.user.language;
+    if (config.bootData && config.bootData.user && config.bootData.user.language) {
+      const language = config.bootData.user.language;
       if (language.startsWith('zh')) {
         return 'zh';
       }
@@ -23,12 +22,7 @@ const getGrafanaLocale = (): string => {
     }
     return 'en';
   } catch (error) {
-    console.warn('Failed to get Grafana locale, using browser default:', error);
-    // 回退到浏览器语言
-    const browserLang = navigator.language || (navigator as any).userLanguage;
-    if (browserLang && browserLang.startsWith('zh')) {
-      return 'zh';
-    }
+    console.warn('Failed to get browser locale, using default:', error);
     return 'en';
   }
 };
@@ -73,7 +67,7 @@ i18n
         translation: zh,
       },
     },
-    lng: getGrafanaLocale(), // 使用Grafana的语言设置
+    lng: getGrafanaLocale(), // 使用安全的语言检测
     fallbackLng: 'en',
     debug: process.env.NODE_ENV === 'development',
     

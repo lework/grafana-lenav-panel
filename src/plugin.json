@@ -5,7 +5,7 @@
   "id": "lework-lenav-panel",
   "info": {
     "keywords": ["panel", "website navigation"],
-    "description": "",
+    "description": "A panel to display website navigation.",
     "author": {
       "name": "lework",
       "url": "https://github.com/lework/grafana-lenav-panel"

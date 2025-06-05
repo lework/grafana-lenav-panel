@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { css, cx } from '@emotion/css';
 import { PanelProps, GrafanaTheme2 } from '@grafana/data';
 import { useStyles2, Icon } from '@grafana/ui';
+import { config } from '@grafana/runtime';
 import { NavOptions, GroupDataProps, LinkProps } from 'types';
 import { useTranslation } from 'react-i18next';
 import './i18n'; // 导入i18n配置
@@ -45,7 +46,8 @@ const getDefaultLinks = (t: (key: string) => string) => [
   },
 ];
 
-interface Props extends PanelProps<NavOptions> {}
+interface Props extends PanelProps<NavOptions> { }
+
 
 // 检查当前用户是否有权限访问链接
 const hasLinkPermission = (link: any, t: (key: string) => string): boolean => {
@@ -54,16 +56,14 @@ const hasLinkPermission = (link: any, t: (key: string) => string): boolean => {
     return true;
   }
 
-  // 从window.grafanaBootData获取用户角色信息
   try {
-    // 获取全局Grafana用户数据
-    const grafanaBootData = (window as any).grafanaBootData;
-    if (!grafanaBootData || !grafanaBootData.user) {
+    // 通过 config.bootData.user 获取用户信息
+    const user = config.bootData?.user;
+    if (!user) {
       console.warn(t('errors.noUserInfo'));
       return false;
     }
 
-    const user = grafanaBootData.user;
     const isAdmin = user.isGrafanaAdmin || false;
     const isEditor = user.orgRole === 'Editor' || isAdmin;
     const isViewer = user.orgRole === 'Viewer' || isEditor;
