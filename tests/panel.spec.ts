@@ -18,6 +18,7 @@ test('should display group name when "showGroupName" option is enabled', async (
   const dashboard = await readProvisionedDashboard({ fileName: 'dashboard.json' });
   const panelEditPage = await gotoPanelEditPage({ dashboard, id: '2' });
   const options = panelEditPage.getCustomOptions('Website Navigation');
+  console.log(options);
   const showGroupName = options.getSwitch('Display group name');
 
   await showGroupName.check();
